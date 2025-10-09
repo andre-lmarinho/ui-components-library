@@ -1,0 +1,316 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  --page-padding-inline: clamp(1.5rem, 5vw, 3.5rem);
+  --page-padding-block: clamp(3.5rem, 8vh, 6.5rem);
+  --card-max-width: min(100%, 32rem);
+  --surface-color: #ffffff;
+  --background-top: #e6edf7;
+  --background-bottom: #f7f9fc;
+  --text-color: #0f1c33;
+  --muted-text: #5b6b84;
+  --focus-ring: 0 0 0 4px rgba(58, 109, 240, 0.25);
+  --focus-ring-subtle: 0 0 0 4px rgba(58, 109, 240, 0.15);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--background-top) 0%, var(--background-top) 45%, var(--background-bottom) 100%);
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+  padding: var(--page-padding-block) var(--page-padding-inline);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.page-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.password-card {
+  width: var(--card-max-width);
+  background-color: var(--surface-color);
+  border-radius: 1.5rem;
+  padding: clamp(2rem, 4vw, 2.75rem);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.password-card__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.password-card__header h1 {
+  margin: 0;
+  font-size: clamp(1.625rem, 2vw, 1.875rem);
+  line-height: 1.2;
+  color: var(--text-color);
+}
+
+.account-info {
+  width: 100%;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 0.9rem;
+  background-color: transparent;
+  color: inherit;
+  text-align: left;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.account-info__avatar {
+  border-radius: 50%;
+}
+
+.account-info__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.account-info__type {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-text);
+}
+
+.account-info__name {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.account-info:hover {
+  background-color: #f3f6fb;
+  border-color: transparent;
+  box-shadow: var(--focus-ring-subtle);
+  outline: none;
+}
+
+.account-info:focus-visible {
+  background-color: #f3f6fb;
+  border-color: transparent;
+  box-shadow: var(--focus-ring);
+  outline: none;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #24324b;
+}
+
+.password-input {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  border: 1px solid #d5deed;
+  border-radius: 0.9rem;
+  background-color: #f9fbff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.password-input:focus-within {
+  border-color: #3a6df0;
+  box-shadow: var(--focus-ring-subtle);
+}
+
+.password-input__icon {
+  color: #5b6b84;
+  display: flex;
+}
+
+.password-input__field {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: #0f1c33;
+}
+
+.password-input__field::placeholder {
+  color: #9aabc7;
+}
+
+.password-input__field:focus {
+  outline: none;
+}
+
+.password-visibility {
+  color: #5b6b84;
+  display: grid;
+  place-items: center;
+  border-radius: 0.65rem;
+  padding: 0.35rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.password-visibility:hover,
+.password-visibility:focus-visible {
+  background-color: rgba(58, 109, 240, 0.08);
+  color: #2e4e91;
+  outline: none;
+}
+
+.password-visibility__icon {
+  display: none;
+}
+
+.password-visibility[data-visibility="hidden"] .password-visibility__icon--hidden {
+  display: block;
+}
+
+.password-visibility[data-visibility="visible"] .password-visibility__icon--visible {
+  display: block;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.stay-signed-in {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: #24324b;
+  cursor: pointer;
+  position: relative;
+}
+
+.stay-signed-in input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.stay-signed-in__control {
+  position: relative;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background-color: #d5deed;
+  transition: background-color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.stay-signed-in__thumb {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(12, 31, 71, 0.18);
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.stay-signed-in input:checked + .stay-signed-in__control {
+  background-color: #3a6df0;
+}
+
+.stay-signed-in input:checked + .stay-signed-in__control .stay-signed-in__thumb {
+  transform: translateX(1.15rem);
+}
+
+.stay-signed-in input:focus-visible + .stay-signed-in__control {
+  box-shadow: var(--focus-ring);
+}
+
+.stay-signed-in__label {
+  white-space: nowrap;
+}
+
+.primary-button {
+  padding: 0.9rem 1.8rem;
+  border-radius: 0.9rem;
+  background-color: #0f1c33;
+  color: #ffffff;
+  font-weight: 600;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.primary-button:hover,
+.primary-button:focus-visible {
+  background-color: #153368;
+  box-shadow: 0 12px 24px rgba(21, 51, 104, 0.25);
+  outline: none;
+}
+
+.reset-password {
+  align-self: flex-start;
+  color: #3a6df0;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+.reset-password:hover,
+.reset-password:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+@media (max-width: 480px) {
+  .password-card {
+    width: 100%;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .primary-button {
+    width: 100%;
+  }
+}
