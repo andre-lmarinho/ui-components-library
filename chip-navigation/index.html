@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chip Navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header" data-fixed-header>
+      <h1>Menu</h1>
+      <nav class="chipbar">
+        <button class="chip is-active"><a href="#appetizers">Appetizers</a></button>
+        <button class="chip"><a href="#mains">Mains</a></button>
+        <button class="chip"><a href="#pasta">Pasta</a></button>
+        <button class="chip"><a href="#salads">Salads</a></button>
+        <button class="chip"><a href="#desserts">Desserts</a></button>
+        <button class="chip"><a href="#drinks">Drinks</a></button>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <section class="menu-category" id="appetizers" data-category="appetizers">
+        <h2>Appetizers</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Bruschetta</span>
+          <span class="menu-item__price">$9</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Garlic Bread</span>
+          <span class="menu-item__price">$7</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Stuffed Mushrooms</span>
+          <span class="menu-item__price">$11</span>
+        </div>
+      </section>
+
+      <section class="menu-category" id="mains" data-category="mains">
+        <h2>Mains</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Grilled Salmon</span>
+          <span class="menu-item__price">$24</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Ribeye Steak</span>
+          <span class="menu-item__price">$32</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Chicken Parmesan</span>
+          <span class="menu-item__price">$19</span>
+        </div>
+      </section>
+
+      <section class="menu-category" id="pasta" data-category="pasta">
+        <h2>Pasta</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Spaghetti Carbonara</span>
+          <span class="menu-item__price">$16</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Fettuccine Alfredo</span>
+          <span class="menu-item__price">$15</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Penne Arrabiata</span>
+          <span class="menu-item__price">$14</span>
+        </div>
+      </section>
+
+      <section class="menu-category" id="salads" data-category="salads">
+        <h2>Salads</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Caesar Salad</span>
+          <span class="menu-item__price">$12</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Greek Salad</span>
+          <span class="menu-item__price">$11</span>
+        </div>
+      </section>
+
+      <section class="menu-category" id="desserts" data-category="desserts">
+        <h2>Desserts</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Tiramisu</span>
+          <span class="menu-item__price">$10</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Panna Cotta</span>
+          <span class="menu-item__price">$9</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Gelato</span>
+          <span class="menu-item__price">$8</span>
+        </div>
+      </section>
+
+      <section class="menu-category" id="drinks" data-category="drinks">
+        <h2>Drinks</h2>
+        <div class="menu-item">
+          <span class="menu-item__name">Espresso</span>
+          <span class="menu-item__price">$4</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">Fresh Lemonade</span>
+          <span class="menu-item__price">$5</span>
+        </div>
+        <div class="menu-item">
+          <span class="menu-item__name">House Wine</span>
+          <span class="menu-item__price">$9</span>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

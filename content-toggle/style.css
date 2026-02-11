@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  --background-color: #f4f6f9;
+  --surface-color: #ffffff;
+  --text-color: #1a2332;
+  --muted-text: #6b7a90;
+  --accent-color: #10e375;
+  --border-color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.page-content {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.page-content h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+/* ---------- TOGGLE BUTTONS ---------- */
+.toggle-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.toggle-button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid var(--border-color);
+  border-radius: 0.75rem;
+  background: var(--surface-color);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 500;
+  color: var(--muted-text);
+  transition: color 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+  flex: 1;
+  min-width: 0;
+}
+
+.toggle-button__icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-text);
+  transition: color 200ms ease;
+}
+
+.toggle-button__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.toggle-button:hover {
+  border-color: #cbd5e1;
+}
+
+.toggle-button.is-active {
+  color: var(--text-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-color);
+}
+
+.toggle-button.is-active .toggle-button__icon {
+  color: var(--accent-color);
+}
+
+.toggle-button:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ---------- PANELS ---------- */
+[data-panel] {
+  display: none;
+  animation: panelFadeIn 300ms ease;
+}
+
+[data-panel].is-active {
+  display: block;
+}
+
+@keyframes panelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.panel-card {
+  background: var(--surface-color);
+  border-radius: 1rem;
+  padding: clamp(1.5rem, 3vw, 2rem);
+  border: 1px solid var(--border-color);
+}
+
+.panel-card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1.25rem;
+}
+
+.panel-card p {
+  margin: 0;
+  color: var(--muted-text);
+  line-height: 1.7;
+}
+
+@media (max-width: 560px) {
+  .toggle-buttons {
+    flex-direction: column;
+  }
+}

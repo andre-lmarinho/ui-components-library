@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Toggle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-content">
+      <h1>Multi-Content Toggle</h1>
+      <div data-toggle-group>
+        <div class="toggle-buttons" role="tablist">
+          <button class="toggle-button" data-toggle="1">
+            <span class="toggle-button__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="M2 17l10 5 10-5"></path>
+                <path d="M2 12l10 5 10-5"></path>
+              </svg>
+            </span>
+            Overview
+          </button>
+          <button class="toggle-button" data-toggle="2">
+            <span class="toggle-button__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </span>
+            Features
+          </button>
+          <button class="toggle-button" data-toggle="3">
+            <span class="toggle-button__icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </span>
+            Support
+          </button>
+        </div>
+
+        <div data-panel="1" aria-hidden="false">
+          <div class="panel-card">
+            <h2>Product Overview</h2>
+            <p>Our platform helps teams ship faster with integrated tools for planning, building, and deploying. Get a bird's-eye view of your projects and track progress across every milestone.</p>
+          </div>
+        </div>
+
+        <div data-panel="2" aria-hidden="true">
+          <div class="panel-card">
+            <h2>Key Features</h2>
+            <p>Real-time collaboration, automated CI/CD pipelines, built-in code review, and customizable dashboards. Everything you need to go from idea to production without switching tools.</p>
+          </div>
+        </div>
+
+        <div data-panel="3" aria-hidden="true">
+          <div class="panel-card">
+            <h2>Get Support</h2>
+            <p>Our team is available 24/7 via chat, email, and phone. Access our knowledge base for tutorials, guides, and community forums where you can connect with other developers.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

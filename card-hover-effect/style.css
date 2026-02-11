@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  font-size: 16px;
+  --background-color: #0f172a;
+  --surface-color: #1e293b;
+  --text-color: #f1f5f9;
+  --muted-text: #94a3b8;
+  --accent-color: #3b82f6;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--background-color);
+  color: var(--text-color);
+  display: grid;
+  place-items: center;
+  padding: clamp(2rem, 5vw, 4rem);
+}
+
+.page-content {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.page-content h1 {
+  margin: 0;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-align: center;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.card {
+  background: var(--surface-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 0.75rem;
+  background: var(--accent-color);
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.938rem;
+  line-height: 1.6;
+}
+
+.js-hover-move {
+  will-change: transform;
+}
+
+.js-hover-move:hover {
+  box-shadow:
+    0 8px 60px 0 rgba(12, 40, 70, 0.22),
+    0 12px 90px 0 rgba(12, 40, 70, 0.22);
+}
