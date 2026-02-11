@@ -107,7 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const activateChip = (chip, options = {}) => {
       const { scrollToTarget = true } = options;
-      if (currentActive === chip) return;
+      if (currentActive === chip) {
+        if (scrollToTarget) {
+          const target = getTargetForChip(chip);
+          if (target) smoothScrollToTarget(target);
+        }
+        return;
+      }
 
       chips.forEach((item) => {
         item.classList.remove('is-active');
@@ -144,11 +150,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     chips.forEach((chip) => {
       chip.addEventListener('click', (event) => {
-        const anchor = event.target?.closest?.('a');
-        const hasHash = !!(anchor && anchor.hash && anchor.hash.length > 1);
-        lockScrollSync(hasHash ? 800 : 1000);
+        event.preventDefault();
+        lockScrollSync(1000);
         lastClicked.set(chip);
-        activateChip(chip, { scrollToTarget: !hasHash });
+        activateChip(chip, { scrollToTarget: true });
       });
     });
 
@@ -275,10 +280,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- Drag-to-scroll ---------- */
     let isDragging = false;
+    let isPointerDown = false;
     let startX = 0;
     let startScrollLeft = 0;
     let snapType = getComputedStyle(container).scrollSnapType || 'x mandatory';
     let snapTimer = null;
+    const DRAG_THRESHOLD = 5;
 
     const disableSnapTemporarily = () => {
       snapType = getComputedStyle(container).scrollSnapType;
@@ -291,17 +298,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startDrag = (event) => {
       if (event.button !== undefined && event.button !== 0) return;
-      isDragging = true;
-      container.classList.add('is-dragging');
-      disableSnapTemporarily();
+      isPointerDown = true;
+      isDragging = false;
       startX = event.touches ? event.touches[0].clientX : event.clientX;
       startScrollLeft = container.scrollLeft;
     };
 
     const dragMove = (event) => {
-      if (!isDragging) return;
+      if (!isPointerDown) return;
       const clientX = event.touches ? event.touches[0].clientX : event.clientX;
       const delta = clientX - startX;
+      if (!isDragging && Math.abs(delta) >= DRAG_THRESHOLD) {
+        isDragging = true;
+        container.classList.add('is-dragging');
+        disableSnapTemporarily();
+      }
+      if (!isDragging) return;
       container.scrollLeft = startScrollLeft - delta;
       event.preventDefault();
       clearTimeout(snapTimer);
@@ -309,6 +321,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const endDrag = () => {
+      if (!isPointerDown) return;
+      isPointerDown = false;
       if (!isDragging) return;
       isDragging = false;
       container.classList.remove('is-dragging');
