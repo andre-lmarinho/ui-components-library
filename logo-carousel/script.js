@@ -45,7 +45,8 @@ const initialiseClientCarousel = (root) => {
     const minWidth = viewport.clientWidth * DUPLICATION_BUFFER;
     if (minWidth === 0) return false;
 
-    while (track.scrollWidth < minWidth) {
+    const maxRounds = Math.ceil(minWidth / Math.max(track.scrollWidth, 1)) + 1;
+    for (let i = 0; i < maxRounds && track.scrollWidth < minWidth; i++) {
       templateSlides.forEach((slide) => track.appendChild(slide.cloneNode(true)));
     }
 
