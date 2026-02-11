@@ -32,7 +32,6 @@ body {
   max-width: 720px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 .page-content h1 {
@@ -46,6 +45,7 @@ body {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-block: 2em;
 }
 
 .toggle-button {
