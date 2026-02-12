@@ -13,6 +13,7 @@ This repository collects standalone UI components and solutions for front-end ch
 | [content-toggle](content-toggle/) | Multi-panel toggle with keyboard navigation and fade transitions |
 | [feature-carousel](feature-carousel/) | Pointer-based drag carousel with synced cards, dots, and mobile card swiping |
 | [logo-carousel](logo-carousel/) | Continuously looping logo strip that slows on hover |
+| [mobile-menu-toggle](mobile-menu-toggle/) | Hamburger button with slide-in navigation panel |
 | [password-field](password-field/) | Password input with visibility toggle and stay-signed-in switch |
 
 ## Useful Resources

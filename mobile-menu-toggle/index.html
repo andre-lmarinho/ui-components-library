@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Menu Toggle</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="header-content">
+        <div class="logo">MyBrand</div>
+        <button id="slide-in-open" aria-label="Toggle menu" aria-expanded="false">
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="slide-in-menu-container" aria-hidden="true">
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="page-content">
+      <section class="hero">
+        <h1>Mobile Menu Toggle</h1>
+        <p>Click the hamburger icon in the header to open the slide-in menu.</p>
+      </section>
+
+      <section class="demo-section">
+        <h2>Features</h2>
+        <ul>
+          <li>Smooth hamburger-to-X animation</li>
+          <li>Slide-in menu from the right</li>
+          <li>Close with button click or ESC key</li>
+          <li>Fully accessible (ARIA attributes, keyboard support)</li>
+          <li>Pure vanilla JavaScript — no dependencies</li>
+        </ul>
+      </section>
+
+      <section class="demo-section">
+        <h2>Lorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+
+      <section class="demo-section">
+        <h2>More Content</h2>
+        <p>Scroll down to see the fixed header behavior. The menu overlay will cover the entire viewport when opened.</p>
+        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

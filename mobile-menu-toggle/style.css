@@ -1,0 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
+
+  /* Hamburger */
+  --hamburger-color: #24394a;
+  --hamburger-bg: transparent;
+  --hamburger-size: 30px;
+  --line-height: 4px;
+
+  /* Menu */
+  --menu-bg: #ffffff;
+  --menu-width: 280px;
+  --menu-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  --menu-link-color: #24394a;
+  --menu-link-hover: #3a5a7a;
+
+  /* Transitions */
+  --transition-fast: 0.1s;
+  --transition-menu: 0.5s;
+
+  /* Page */
+  --page-bg: #f4f6f9;
+  --text-color: #1a2332;
+  --header-bg: #ffffff;
+  --border-color: #e2e8f0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page-bg);
+  color: var(--text-color);
+}
+
+/* ---------- HEADER ---------- */
+.page-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--header-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 3vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+/* ---------- HAMBURGER BUTTON ---------- */
+#slide-in-open {
+  position: relative;
+  width: var(--hamburger-size);
+  height: var(--hamburger-size);
+  background: var(--hamburger-bg);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+#slide-in-open:focus-visible {
+  outline: 2px solid var(--hamburger-color);
+  outline-offset: 4px;
+}
+
+.line {
+  display: block;
+  position: absolute;
+  height: var(--line-height);
+  width: 100%;
+  background: var(--hamburger-color);
+  border-radius: 9px;
+  opacity: 1;
+  transition: var(--transition-fast) ease-in-out;
+}
+
+.line-1 {
+  top: 0;
+}
+
+.line-2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.line-3 {
+  bottom: 0;
+}
+
+/* Hamburger → X animation */
+#slide-in-open.open .line-1 {
+  top: 50%;
+  transform: translateY(-50%) rotate(135deg);
+}
+
+#slide-in-open.open .line-2 {
+  opacity: 0;
+}
+
+#slide-in-open.open .line-3 {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-135deg);
+}
+
+/* ---------- SLIDE-IN MENU ---------- */
+.slide-in-menu-container {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: var(--menu-width);
+  max-width: 85vw;
+  height: 100vh;
+  background: var(--menu-bg);
+  box-shadow: var(--menu-shadow);
+  z-index: 90;
+  opacity: 0;
+  transition: all var(--transition-menu) ease;
+  overflow-y: auto;
+  padding: 5rem 2rem 2rem;
+}
+
+.slide-in-menu-container.slide-in-menu {
+  right: 0;
+  opacity: 1;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.menu li {
+  margin: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.875rem 1rem;
+  color: var(--menu-link-color);
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus {
+  background: #f4f6f9;
+  color: var(--menu-link-hover);
+}
+
+.menu a:focus-visible {
+  outline: 2px solid var(--menu-link-hover);
+  outline-offset: 2px;
+}
+
+/* ---------- PAGE CONTENT ---------- */
+.page-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem clamp(1rem, 3vw, 2rem);
+}
+
+.hero {
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 2.5rem);
+}
+
+.hero p {
+  margin: 0;
+  font-size: 1.125rem;
+  color: #6b7a90;
+}
+
+.demo-section {
+  margin: 3rem 0;
+}
+
+.demo-section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+.demo-section p {
+  margin: 1rem 0;
+  color: #5b6b84;
+}
+
+.demo-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+  color: #5b6b84;
+}
+
+.demo-section li {
+  margin: 0.5rem 0;
+}
