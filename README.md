@@ -1,38 +1,32 @@
 # UI Components Library
 
-A curated collection of production-ready, vanilla JavaScript UI components. Each component is self-contained, accessible, and framework-free — just open the HTML file or copy the code into your project.
+A browsable collection of standalone interface examples. The examples use HyperText Markup Language (HTML), Cascading Style Sheets (CSS), and vanilla JavaScript.
 
-Originally created for [iCodeThis](https://icodethis.com/) challenges, these components evolved into reusable, professional-grade UI elements suitable for real-world projects.
+Each row links to an example's HTML, CSS, and JavaScript files. Open an HTML file from a local checkout to view it. Copy and adapt the files for your project.
 
-- [My iCodeThis Profile](https://icodethis.com/Andre_Marinho)
-- [My CodePen Profile](https://codepen.io/andre-lmarinho)
+Originally created for [iCodeThis](https://icodethis.com/) challenges.
 
-## Components
+- [iCodeThis profile](https://icodethis.com/Andre_Marinho)
+- [CodePen profile](https://codepen.io/andre-lmarinho)
 
-| Component | Category | Description |
-|---|---|---|
-| [card-hover-effect](card-hover-effect/) | Effects | Pointer-following hover animation for interactive cards |
-| [chip-navigation](chip-navigation/) | Navigation | Horizontal scrolling chip tabs linked to page sections with scroll sync |
-| [content-toggle](content-toggle/) | Controls | Multi-panel toggle with keyboard navigation and fade transitions |
-| [feature-carousel](feature-carousel/) | Carousels | Pointer-based drag carousel with synced cards, dots, and mobile card swiping |
-| [logo-carousel](logo-carousel/) | Carousels | Continuously looping logo strip that slows on hover |
-| [mobile-menu-toggle](mobile-menu-toggle/) | Navigation | Hamburger button with slide-in navigation panel |
-| [password-field](password-field/) | Forms | Password input with visibility toggle and stay-signed-in switch |
+## Examples
 
-## Features
+| Component | HTML | CSS | JavaScript | Behavior |
+|---|---|---|---|---|
+| Card hover effect | [HTML](card-hover-effect/index.html) | [CSS](card-hover-effect/style.css) | [JavaScript](card-hover-effect/script.js) | Moves cards with pointer position |
+| Chip navigation | [HTML](chip-navigation/index.html) | [CSS](chip-navigation/style.css) | [JavaScript](chip-navigation/script.js) | Scrolls to page sections and syncs the selected chip |
+| Content toggle | [HTML](content-toggle/index.html) | [CSS](content-toggle/style.css) | [JavaScript](content-toggle/script.js) | Switches panels by click, Enter, or Space; arrow keys move focus |
+| Feature carousel | [HTML](feature-carousel/index.html) | [CSS](feature-carousel/style.css) | [JavaScript](feature-carousel/script.js) | Syncs pointer-drag media with cards; dots and cards select slides |
+| Logo carousel | [HTML](logo-carousel/index.html) | [CSS](logo-carousel/style.css) | [JavaScript](logo-carousel/script.js) | Loops logos and slows on hover; stops for reduced motion |
+| Mobile menu toggle | [HTML](mobile-menu-toggle/index.html) | [CSS](mobile-menu-toggle/style.css) | [JavaScript](mobile-menu-toggle/script.js) | Opens a slide-in menu; closes on Escape or outside click |
+| Password field | [HTML](password-field/index.html) | [CSS](password-field/style.css) | [JavaScript](password-field/script.js) | Toggles password visibility and clears the field; no authentication logic |
 
-- **No Dependencies** – Pure vanilla JavaScript/CSS/HTML, no build tools or frameworks required
-- **Self-Contained** – Each component is independent and can be used standalone
-- **Accessible** – ARIA attributes, keyboard navigation, and semantic HTML
-- **Responsive** – Modern CSS techniques (flexbox, grid, clamp) for all screen sizes
-- **Performance-Conscious** – Uses transforms, requestAnimationFrame, and passive listeners
-- **Production-Ready** – Respects user preferences (prefers-reduced-motion), includes error handling
+## Use
 
-## Useful Resources
+The examples need no package install or build step. They use browser APIs and can run as local files.
 
-These assets are handy for rapidly prototyping UI elements during the challenges:
+The CSS imports Inter from Google Fonts. The feature carousel loads sample photos from Picsum, the logo carousel loads vector images from SVGL, and the password example loads an avatar from Pravatar. Those remote assets need an internet connection.
 
-- [Pravatar](https://pravatar.cc/) – placeholder avatar images.
-- [Picsum](https://picsum.photos/images) – royalty-free placeholder photography.
-- [SVGL](https://svgl.vercel.app/) – curated SVG icon library.
-- [Tabler Icons](https://tabler-icons.io/) – versatile open-source SVG icon set.
+These examples are starting points, not production-ready components. Accessibility support varies. Some examples use semantic controls, accessibility states, focus styles, or keyboard input. Others rely on pointer interaction.
+
+The examples have not been audited for accessibility conformance. Review and test each example before using it in a product.
